@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-12">
+    <app-user-top [userInfo]="userInfo"></app-user-top>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-4">
+          <app-user-info [userInfo]="userInfo"></app-user-info>
+        </div>
+        <div class="col-md-8">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

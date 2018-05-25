@@ -1,0 +1,54 @@
+ul li{
+    list-style: none;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+
+.user-top{
+    background: url("http://img.t.sinajs.cn/t5/skin/public/profile_cover/073.jpg") no-repeat;
+    box-sizing: border-box;
+    height: 300px;    
+    padding: 20px;
+}
+.user-top .caption{
+    color: white;
+    cursor: pointer;
+}
+.headPic{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid rgba(144, 144, 144, 0.5);
+    transition: all 0.5s;
+}
+.headPic:hover{
+    transform: scale(1.2);
+}
+.user-nav-group{
+    width: 60%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.user-nav{
+    float: left;
+    box-sizing: border-box;
+    width: 33.3%;
+    padding: 15px;
+    text-align: center;
+}
+
+.user-nav a{
+    display: block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    color: black;
+}
+
+.active a{
+    border-bottom: 2px solid #eb7350;
+    font-weight: bold;
+}

@@ -1,3 +1,29 @@
-<p>
-  user-info works!
-</p>
+<ul class="user-info-items">
+  <h4>个人信息</h4>
+  <li class="user-info-item">
+    <span class="glyphicon glyphicon-user"></span>
+    <span>{{userInfo.name}}</span>
+  </li>
+  <li class="user-info-item">
+    <span class="glyphicon glyphicon-gift"></span>
+    <span>{{userInfo.age}}</span>
+  </li>
+  <li class="user-info-item">
+    <span class="glyphicon glyphicon-phone"></span>
+    <span>{{userInfo.phone}}</span>
+  </li>
+  <li class="user-info-item">
+    <span class="glyphicon glyphicon-tree-conifer"></span>
+    <span>{{userInfo.address}}</span>
+  </li>
+  <li class="user-info-item">
+    <span class="glyphicon glyphicon-comment"></span>
+    <span>{{userInfo.email}}</span>
+  </li>
+  <li class="user-change-link">
+    <a [routerLink]="['./change']">
+      编辑消息
+      <span class="glyphicon glyphicon-menu-right"></span>
+    </a>
+  </li>
+</ul>

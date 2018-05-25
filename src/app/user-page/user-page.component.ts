@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { User, BlogServiceService } from '../blog-service.service';
 
 @Component({
-  selector: 'app-change-info',
-  templateUrl: './change-info.component.html',
-  styleUrls: ['./change-info.component.css']
+  selector: 'app-user-page',
+  templateUrl: './user-page.component.html',
+  styleUrls: ['./user-page.component.css']
 })
-export class ChangeInfoComponent implements OnInit {
+export class UserPageComponent implements OnInit {
 
   private userInfo: User;
   constructor(private blogService: BlogServiceService) { }

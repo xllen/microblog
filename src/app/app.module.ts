@@ -16,6 +16,17 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { BlogServiceService } from './blog-service.service';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import { UserPageComponent } from './user-page/user-page.component';
+import { Routes, RouterModule } from '@angular/router';
+
+
+const routeConfig:Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'user', component: UserPageComponent, children:[
+    {path: '',component: HomeComponent},
+    {path: 'change',component: ChangeInfoComponent}
+  ]}
+];
 
 @NgModule({
   declarations: [
@@ -29,12 +40,14 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
     UserInfoComponent,
     ChangeInfoComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    UserPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routeConfig)
   ],
   providers: [BlogServiceService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

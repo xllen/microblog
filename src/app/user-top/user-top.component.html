@@ -1,3 +1,23 @@
-<p>
-  user-top works!
-</p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="thumbnail user-top">
+      <img class="headPic" [src]="userInfo.headUrl" alt="个人头像">
+      <div class="caption">
+        <h3 class="text-center">{{userInfo.nickName}}</h3>
+        <p class="text-center">{{userInfo.motto}}</p>
+      </div>
+    </div>
+
+    <ul class="user-nav-group">
+      <li class="user-nav active">
+        <a [routerLink]="['./']">我的主页</a>
+      </li>
+      <li class="user-nav">
+        <a>我的相册</a>
+      </li>
+      <li class="user-nav">
+        <a>管理中心</a>
+      </li>
+    </ul>
+  </div>
+</div>

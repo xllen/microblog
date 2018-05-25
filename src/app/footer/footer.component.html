@@ -1,3 +1,50 @@
-<p>
-  footer works!
-</p>
+<div class="footer">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <p>
+        <span>客服热线: 1111-223-445</span>
+        <span>
+          <a data-toggle="modal" data-target="#idea">意见反馈</a>
+        </span>
+        <span>微博招聘</span>
+      </p>
+      <p>Copyright © 2018-05 李鸿正、谢磊、张仲鸣</p>
+      <p>欢迎来到我们的微博</p>
+    </div>
+  </div>
+</div>
+<div id="idea" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">意见反馈</h4>
+      </div>
+      <div class="modal-body">
+        <form class="idea-form">
+          <div class="form-group">
+            <label for="idea-title" class="col-sm-2 control-label">意见主题</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="idea-title" placeholder="请简要描述你的问题">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="idea-detail" class="col-sm-2 control-label">意见内容</label>
+            <div class="col-sm-10">
+              <textarea name="idea-detail" id="idea-detail" class="form-control" placeholder="请开始叙述你的问题和意见..."></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">确认提交</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

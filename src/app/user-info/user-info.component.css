@@ -1,0 +1,27 @@
+ul li{
+    list-style: none;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+
+.user-info-items{
+   border: 1px solid #ccc;
+   box-sizing: border-box;
+   padding: 30px 15px 0 15px;
+}
+.user-info-item{
+    border-bottom: 1px solid #ccc;
+    height: 30px;
+    line-height: 30px;
+}
+.user-info-item span{
+    padding: 0 5px;
+}
+.user-change-link{
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}

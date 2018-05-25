@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { User } from '../blog-service.service';
 
 @Component({
   selector: 'app-user-info',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserInfoComponent implements OnInit {
 
+  @Input()
+  private userInfo: User;
   constructor() { }
 
   ngOnInit() {

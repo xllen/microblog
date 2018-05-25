@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { User } from '../blog-service.service';
 
 @Component({
   selector: 'app-user-top',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserTopComponent implements OnInit {
 
+  @Input()
+  private userInfo:User;
   constructor() { }
 
   ngOnInit() {
