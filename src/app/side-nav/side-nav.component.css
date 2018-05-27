@@ -1,0 +1,27 @@
+.side-nav {
+    position: fixed;
+    top: 70px;
+    left: 100px;
+    width: 200px;
+    height: 600px;
+}
+.side-nav ul {
+    padding:5px 0 0 40px;
+}
+.side-nav ul li{
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+.side-nav ul li a {
+    font-weight: bold;
+    color: #fff; 
+}
+.side-nav ul li a:hover {
+    text-decoration: none;
+}
+.side-nav ul li:hover{
+    background-color: rgb(180, 218, 240,.3);
+}

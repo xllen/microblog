@@ -10,7 +10,10 @@ a{
 .user-info-items{
    border: 1px solid #ccc;
    box-sizing: border-box;
-   padding: 30px 15px 0 15px;
+   padding: 20px 15px 0 15px;
+   background-color: #fff;
+   margin-top: 10px;
+   margin-left: -15px;
 }
 .user-info-item{
     border-bottom: 1px solid #ccc;

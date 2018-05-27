@@ -1,0 +1,58 @@
+.post-blog {
+    width: 600px;
+    height: 200px;
+    background-color: #fff;
+}
+.post-blog .title {
+    width: 200px;
+    height: 20px;
+    font-size: 16px;
+    margin-left: 20px;
+    padding-top: 5px;
+    color: #b4daf0;
+
+}
+.post-blog .post-form{
+    width: 600px;
+    height: 180px;
+    position: relative;
+}
+.post-blog .post-form textarea {
+    width: 95%;
+    height: 100px;
+    margin: 0 auto;
+}
+.post-blog .post-form .emoj,
+.post-blog .post-form .file,
+.post-blog .post-form .issue {
+    width: 60px;
+    height: 20px;
+    float: left;
+    cursor: pointer;
+    margin-left: 13px;
+}
+.post-blog .post-form .emoj:hover,
+.post-blog .post-form .file:hover {
+    color: #eb7350;
+}
+.post-blog .post-form .file {
+    width: 80px;
+    position: relative;
+}
+.post-blog .post-form .issue {
+    width: 70px;
+    height: 34px;
+    position: absolute;
+    bottom: 25px;
+    right: 13px;
+}
+.post-blog .post-form .issue button {
+    background-color: #eb7350;
+    color: #fff;
+}
+.post-blog .post-form .file input{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    opacity: 0;
+}

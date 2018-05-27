@@ -1,0 +1,24 @@
+.search-form {
+    margin-right: 200px;
+    position: relative;
+}
+.search-form input {
+    width: 400px;
+}
+.search-form span {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    position: absolute;
+    right: 20px;
+    top: 3px;
+    text-align: center;
+    line-height: 28px;
+    color: #ccc;
+    background-color: #fff;
+    cursor: pointer;
+}
+.search-form span:hover {
+    color: #ffb400;
+}

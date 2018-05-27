@@ -1,3 +1,20 @@
-<p>
-  post-blog works!
-</p>
+<div class="post-blog">
+    <p class="title">有什么新鲜事想告诉大家？</p>
+    <form class="post-form" [formGroup]="formModel">
+        <div class="form-group">
+          <textarea class="form-control" placeholder="大家正在搜：张杰谢娜合体快本" formControlName="content"></textarea>
+        </div>
+        <div class="form-group emoj" id="emoj">
+            <span class="glyphicon glyphicon-tag"></span>
+            <span>表情</span>
+        </div>
+        <div class="form-group file">
+            <span class="glyphicon glyphicon-picture"></span>
+            <input type="file" name="图片" id="addImgs">
+            <span>上传图片</span>
+        </div>
+        <div class="form-group issue">
+            <button type="submit" class="btn btn-block">发布</button>
+        </div>
+    </form>
+</div>

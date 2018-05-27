@@ -1,3 +1,27 @@
-<p>
-  blog-detail works!
-</p>
+<div class="container">
+  <div class="blog-detail">
+  <div class="blog-desc">
+      <app-show-blog></app-show-blog>
+  </div>
+  <div class="user-comment">
+    <img [src]="user.headUrl" alt="">
+    <form class="search-form" #myForm="ngForm" (click)="onSearch(myForm.value)">
+        <div class="form-group">
+          <input type="text" class="form-control" ngModel name="comment">
+        </div>
+        <button type="submit" class="btn">发布</button>
+      </form>
+  </div>
+  <div class="blog-comments" *ngFor="let comments of comments.comments">
+      <img [src]="comments.img" alt="">
+      <span style="color: #76a513;margin-left: 10px;">{{comments.name}}：</span>
+      <span>{{comments.cont}}</span>
+      <p>5月27 15:00</p>
+      <div class="praise">
+          <span class="glyphicon glyphicon-thumbs-up"></span>
+          <span>{{comments.praise}}</span>
+      </div>
+  </div>
+</div>
+</div>
+

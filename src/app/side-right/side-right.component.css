@@ -1,0 +1,84 @@
+.side-right {
+    margin-left: -70px;
+}
+.side-user,
+.side-explain,
+.side-opinion {
+    width: 335px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+}
+.side-explain,
+.side-opinion {
+    margin-top: 10px;
+    height: 250px;
+    overflow: hidden;
+}
+.side-user .bgImg {
+    width: 335px;
+    height: 120px;
+}
+.side-user .head-portrait {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: absolute;
+    left: 140px;
+    top: 90px;
+}
+.side-user .name {
+    text-align: center;
+    margin: 20px 0 0 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+.side-user ul {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+}
+.side-user ul li {
+    float: left;
+    width: 110px;
+    height: 40px;
+    text-align: center
+}
+.side-user ul li+li {
+    border-left: 1px solid #ccc;
+}
+.side-user ul li p{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 -5px 0;
+}
+.side-user ul li span {
+    color: #808080;
+}
+.side-explain h4,
+.side-opinion h4{
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 5px 10px;
+    border-bottom: 1px solid #ccc;
+}
+.side-explain .qs,
+.side-opinion .op {
+    margin-top: 20px;
+}
+.side-explain .qs p,
+.side-opinion .op p{
+    margin: 5px 40px;
+}
+.side-opinion .op p a{
+    color: #eb7350;
+}
+.side-opinion .op p a:hover {
+    text-decoration: none;
+}

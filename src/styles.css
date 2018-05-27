@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: rgb(180, 218, 240) !important;
+    background-image: url(https://img.t.sinajs.cn/t6/skin/skin048/images/body_bg_page.jpg?id=201503261330);
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #808080;
+    cursor: pointer;
+}
+a:hover {
+    text-decoration: none;
+}

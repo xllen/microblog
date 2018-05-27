@@ -1,0 +1,62 @@
+.blog-detail {
+    width: 600px;
+    margin: 5px auto;
+}
+.user-comment {
+    background-color: #f2f2f5;
+    width: 600px;
+    min-height: 60px;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+}
+.user-comment img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 18px;
+    top: 12px;
+}
+.user-comment form {
+    height: 70px;
+    margin-left: 50px;
+    padding-top: 10px;
+    position: relative;
+}
+.user-comment form input{
+    width: 80%;
+    margin-left: 10px;
+}
+.user-comment form button {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background-color: #f7671d;
+    width: 60px;
+    height: 30px;
+    line-height: 16px;
+    text-align: center;
+    color: #fff;
+}
+.blog-comments {
+    background-color: #f2f2f5;
+    width: 600px;
+    min-height: 60px;
+    position: relative;
+}
+.blog-comments img {
+    width: 30px;
+    height: 30px;
+    margin: 12px 0 0 20px;
+}
+.blog-comments p {
+    position: absolute;
+    left: 64px;
+    top: 30px;
+    font-size: 12px;
+    color: #808080;
+}
+.blog-comments .praise {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+}

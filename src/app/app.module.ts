@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -18,12 +18,15 @@ import { BlogServiceService } from './blog-service.service';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import { UserPageComponent } from './user-page/user-page.component';
 import { Routes, RouterModule } from '@angular/router';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { SideRightComponent } from './side-right/side-right.component';
 
 
 const routeConfig:Routes = [
   {path: '', component: HomeComponent},
+  {path:'blog/:id',component: BlogDetailComponent},
   {path: 'user', component: UserPageComponent, children:[
-    {path: '',component: HomeComponent},
+    {path: '',component: ShowBlogComponent},
     {path: 'change',component: ChangeInfoComponent}
   ]}
 ];
@@ -41,12 +44,15 @@ const routeConfig:Routes = [
     ChangeInfoComponent,
     HomeComponent,
     UserComponent,
-    UserPageComponent
+    UserPageComponent,
+    SideNavComponent,
+    SideRightComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routeConfig)
   ],
   providers: [BlogServiceService,{provide: LocationStrategy, useClass: HashLocationStrategy}],

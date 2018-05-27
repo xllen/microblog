@@ -1,3 +1,34 @@
-<p>
-  show-blog works!
-</p>
+<div class="show-blog">
+  <h4>热门</h4>
+  <div class="blog-main" *ngFor="let blog of blogs">
+    <div class="blog-user">
+        <img [src]="blog.userImg" alt="">
+      <div class="blog-user-name">
+        <p style="font-weight: bold;margin-bottom: 0px;font-size: 16px;">{{blog.name}}</p>
+        <p style="color: #808080;">29分钟前 来自 即刻笔记</p>
+      </div>
+    </div>
+    <div class="blog-content">
+      <p>{{blog.content}}</p>
+      <ul>
+        <li *ngFor="let image of blog.images"><a href="#"><img [src]="image" alt=""></a></li>
+      </ul>
+    </div>
+    <div class="blog-interact">
+      <ul>
+        <li><a (click)="collect()">
+          <span class="glyphicon glyphicon-heart" [style.color]="isRed ? 'red' : '#808080'"></span>
+          <span>收藏</span>
+        </a></li>
+        <li><a [routerLink]="['/blog',blog.id]">
+          <span class="glyphicon glyphicon-pencil"></span>
+          <span>{{blog.comment.count}}</span>
+        </a></li>
+        <li><a href="#">
+          <span class="glyphicon glyphicon-thumbs-up"></span>
+          <span>{{blog.praiseNum}}</span>
+        </a></li>
+      </ul>
+    </div>  
+  </div>
+</div>

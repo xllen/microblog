@@ -8,6 +8,7 @@ a{
 }
 
 .user-top{
+    width: 850px;
     background: url("http://img.t.sinajs.cn/t5/skin/public/profile_cover/073.jpg") no-repeat;
     box-sizing: border-box;
     height: 300px;    
@@ -27,6 +28,7 @@ a{
 .headPic:hover{
     transform: scale(1.2);
 }
+
 .user-nav-group{
     width: 60%;
     margin: 0 auto;
