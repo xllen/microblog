@@ -13,6 +13,9 @@ a{
     box-sizing: border-box;
     height: 300px;    
     padding: 20px;
+    border-radius: 0%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 .user-top .caption{
     color: white;
@@ -29,6 +32,13 @@ a{
     transform: scale(1.2);
 }
 
+.user-top-nav{
+    width: 850px;
+    background-color: #fff;
+    margin-top: -20px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
 .user-nav-group{
     width: 60%;
     margin: 0 auto;

@@ -1,6 +1,7 @@
 form {
     background-color: #fff;
-    padding: 5px;
+    padding: 30px 20px;
     margin-top: 10px;
-    width: 505px;
+    width: 600px;
+    border-radius: 5px;
 }
