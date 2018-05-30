@@ -11,7 +11,9 @@
     <div class="blog-content">
       <p>{{blog.content}}</p>
       <ul>
-        <li *ngFor="let image of blog.images"><a href="#"><img [src]="image" alt=""></a></li>
+        <li *ngFor="let image of blog.images">
+            <img [src]="image" alt="" class="zoom-in">
+        </li>
       </ul>
     </div>
     <div class="blog-interact">
@@ -24,11 +26,12 @@
           <span class="glyphicon glyphicon-pencil"></span>
           <span>{{blog.comment.count}}</span>
         </a></li>
-        <li><a href="#">
-          <span class="glyphicon glyphicon-thumbs-up"></span>
-          <span>{{blog.praiseNum}}</span>
+        <li><a (click)="praise()">
+          <span class="glyphicon glyphicon-thumbs-up" [class.icon-praise]="isAddOne"></span>
+          <span >{{praiseNum}}</span>
         </a></li>
       </ul>
     </div>  
+    <span class="add-one" [class.addOne]="isAddOne">+1</span>
   </div>
 </div>

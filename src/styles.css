@@ -20,3 +20,21 @@ a {
 a:hover {
     text-decoration: none;
 }
+.bg-img{
+    position: fixed;
+    background-color:rgba(190,190,190,0.5);
+    z-index:9999;
+}
+.tra-img{
+    text-align:center;position:relative;top:50%;
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    transform:translateY(-50%);
+}
+.zoom-out {
+    cursor: -moz-zoom-out;
+    cursor: -webkit-zoom-out;
+    cursor: zoom-out;
+}

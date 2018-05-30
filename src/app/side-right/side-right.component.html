@@ -1,32 +1,65 @@
 <div class="side-right">
   <div class="side-user">
-    <img src="http://img.t.sinajs.cn/t5/skin/public/profile_cover/073.jpg" class="bgImg" alt="">
-    <img src={{userInfo.headUrl}} class="head-portrait" alt="">
-    <p class="name">{{userInfo.nickName}}</p>
-    <ul>
-      <li>
-        <p>{{userInfo.attentionNum}}</p>
-        <span>关注</span>
-      </li>
-      <li>
-        <p>{{userInfo.fans}}</p>
-        <span>粉丝</span>
-      </li>
-      <li>
-        <p>{{userInfo.blog}}</p>
-        <span>微博</span>
-      </li>
-    </ul>
+    <div class="logined" [style.display]="isShowLogin ? 'block':'none'">
+      <img src="http://img.t.sinajs.cn/t5/skin/public/profile_cover/073.jpg" class="bgImg" alt="">
+      <img src={{userInfo.headUrl}} class="head-portrait" alt="">
+      <p class="name">{{userInfo.nickName}}</p>
+      <ul>
+        <li>
+          <p>{{userInfo.attentionNum}}</p>
+          <span>关注</span>
+        </li>
+        <li>
+          <p>{{userInfo.fans}}</p>
+          <span>粉丝</span>
+        </li>
+        <li>
+          <p>{{userInfo.blog}}</p>
+          <span>微博</span>
+        </li>
+      </ul>
+    </div>
+    <div class="unlogin" [style.display]="isShowUnlogin ? 'block':'none'">
+      <h4>账号登录</h4>
+      <form [formGroup]="formModel" (ngSubmit)="onLogin()" novalidate>
+        <div class="form-group" [class.has-error]="!(formModel.get('username').valid || formModel.get('username').untouched)">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" formControlName="username" class="form-control" id="username1" placeholder="邮箱/手机号">
+          </div>         
+          <div [class.hidden]="formModel.get('username').valid || formModel.get('username').untouched">
+            <span class="help-block" [class.hidden]="!formModel.hasError('mobile','username')" style="margin: 0;font-size: 12px">
+              请输入以13/15/17/18开头的11位数字
+            </span>
+          </div>
+        </div>
+        <div class="form-group" [class.has-error]="!(formModel.get('password').valid || formModel.get('password').untouched)">
+            <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+              <input type="password" formControlName="password" class="form-control" id="password1" placeholder="请输入密码">
+            </div>
+          <div [class.hidden]="formModel.get('password').valid || formModel.get('password').untouched">
+            <span class="help-block" [class.hidden]="!formModel.hasError('password','password')" style="margin: 0;font-size: 12px">
+              请输入6位以上的字母或数字
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-block" style="background-color: #eb7350; color: #fff">登录</button>
+          <p class="go-register">还没有微博？<a href="#">立即注册</a></p>
+        </div>
+      </form> 
+    </div>
   </div>
   <div class="side-explain">
     <h4>收藏使用小帮助</h4>
     <div class="qs">
       <p>Q：为什么要收藏微博？</p>
-      <P>A：微博变化太快，看到好东西，还不赶快收藏下来！</P>
+      <p>A：微博变化太快，看到好东西，还不赶快收藏下来！</p>
     </div>
     <div class="qs">
         <p>Q：为什么要给收藏的微博加标签？</p>
-        <P>A：加标签方便日后查找，同时系统也可以根据你的喜好进行微博推荐哦！</P>
+        <p>A：加标签方便日后查找，同时系统也可以根据你的喜好进行微博推荐哦！</p>
     </div>
   </div>  
   <div class="side-opinion">
@@ -37,5 +70,7 @@
           <p><a href="#">微博客服专区</a></p>
           <p><a href="#">全国人大常委会《关于加强网络信息保护的决定》</a></p>
       </div>     
-  </div>  
+  </div>
+
 </div>
+

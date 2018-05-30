@@ -5,7 +5,7 @@
 .side-explain,
 .side-opinion {
     width: 335px;
-    height: 200px;
+    height: 250px;
     background-color: #fff;
     border-radius: 5px;
     position: relative;
@@ -16,9 +16,40 @@
     height: 250px;
     overflow: hidden;
 }
+/*登录界面*/
+.side-user .unlogin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 335px;
+    height: 250px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.side-user .unlogin h4 {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid #eb7350;
+}
+.side-user .unlogin .go-register {
+    font-size: 12px;
+    color: #808080;
+    margin-top: 5px;
+}
+.side-user .unlogin .go-register a {
+    color: #eb7350;
+}
+.side-user .unlogin form {
+    padding: 20px 30px;
+}
+/*登录成功后用户显示*/
 .side-user .bgImg {
     width: 335px;
-    height: 120px;
+    height: 150px;
 }
 .side-user .head-portrait {
     width: 50px;
@@ -26,11 +57,11 @@
     border-radius: 25px;
     position: absolute;
     left: 140px;
-    top: 90px;
+    top: 120px;
 }
 .side-user .name {
     text-align: center;
-    margin: 20px 0 0 0;
+    margin: 30px 0 0 0;
     font-size: 16px;
     font-weight: 600;
 }
@@ -58,6 +89,7 @@
 .side-user ul li span {
     color: #808080;
 }
+/*提示*/
 .side-explain h4,
 .side-opinion h4{
     font-size: 14px;
@@ -66,7 +98,7 @@
     height: 40px;
     line-height: 40px;
     margin: 5px 10px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #eb7350;
 }
 .side-explain .qs,
 .side-opinion .op {

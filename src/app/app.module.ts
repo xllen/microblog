@@ -20,15 +20,23 @@ import { UserPageComponent } from './user-page/user-page.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { SideRightComponent } from './side-right/side-right.component';
+import { MainComponent } from './main/main.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 
 const routeConfig:Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: HomeComponent,children:[
+    {path:'',component: MainComponent},
+    {path:'collect',component: ShowBlogComponent},
+    {path: 'praise',component: ShowBlogComponent},
+    {path: 'friendblog',component: ShowBlogComponent},
+  ]},
   {path:'blog/:id',component: BlogDetailComponent},
   {path: 'user', component: UserPageComponent, children:[
     {path: '',component: ShowBlogComponent},
     {path: 'change',component: ChangeInfoComponent}
-  ]}
+  ]},
+  {path:'register',component: SignInComponent}
 ];
 
 @NgModule({
@@ -46,7 +54,9 @@ const routeConfig:Routes = [
     UserComponent,
     UserPageComponent,
     SideNavComponent,
-    SideRightComponent
+    SideRightComponent,
+    MainComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

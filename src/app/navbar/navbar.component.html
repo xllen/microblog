@@ -23,46 +23,9 @@
         </li>
         <li class="active"><a [routerLink]="['/']">主页<span class="sr-only">(current)</span></a></li>
         <li><a [routerLink]="['/user']">个人中心</a></li>
-        <li><a data-toggle="modal" data-target="#myModal">登录</a></li>
-        <li><a>注册</a></li>
+        <li><a href="#">登录</a></li>
+        <li><a [routerLink]="['/register']">注册</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-<!-- 登录模态框 -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">微博登录</h4>
-        </div>
-        <div class="modal-body">
-            <form [formGroup]="formModel" (ngSubmit)="onLogin()" novalidate>
-                <div class="form-group" [class.has-error]="!(formModel.get('username').valid || formModel.get('username').untouched)">
-                  <label for="username">用户</label>
-                  <input type="text" formControlName="username" class="form-control" id="username" placeholder="邮箱/手机号">
-                  <div [class.hidden]="formModel.get('username').valid || formModel.get('username').untouched">
-                    <span class="help-block" [class.hidden]="!formModel.hasError('mobile','username')">
-                      请输入以13/15/18开头的11位数字
-                    </span>
-                  </div>
-                </div>
-                <div class="form-group" [class.has-error]="!(formModel.get('password').valid || formModel.get('password').untouched)">
-                  <label for="password">密码</label>
-                  <input type="password" formControlName="password" class="form-control" id="password" placeholder="请输入密码">
-                  <div [class.hidden]="formModel.get('password').valid || formModel.get('password').untouched">
-                    <span class="help-block" [class.hidden]="!formModel.hasError('password','password')">
-                      请输入6位以上密码
-                    </span>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-primary btn-block">登录</button>
-                </div>
-              </form> 
-        </div>
-      </div>
-    </div>
-  </div>

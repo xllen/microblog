@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="register">
+    <div class="reg-title">
+      <img src="https://img.t.sinajs.cn/t5/style/images/register/logo_big.png?id=1395992824012" alt="">
+    </div>
+    <div class="reg-content">
+      <h4>个人注册</h4>
+      <div class="reg-form">
+        <form [formGroup]="myFormModel" (ngSubmit)="onLogin()" novalidate class="form-horizontal">
+          <div class="form-group" [class.has-error]="!(myFormModel.get('username').valid || myFormModel.get('username').untouched)">
+              <label for="username1" class="col-sm-3 control-label">*手机:</label>
+            <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+              <input type="text" formControlName="username" class="form-control" id="username1" placeholder="邮箱/手机号">
+            </div>         
+            <div [class.hidden]="myFormModel.get('username').valid || myFormModel.get('username').untouched" style="margin-left:90px">
+              <span class="help-block" [class.hidden]="!myFormModel.hasError('mobile','username')" style="margin: 0;font-size: 12px">
+                *请输入以13/15/17/18开头的11位数字
+              </span>
+            </div>
+          </div>
+          <div class="form-group" [class.has-error]="!(myFormModel.get('password').valid || myFormModel.get('password').untouched)">
+              <label for="password1" class="col-sm-3 control-label" style="padding-left: 5px;">*设置密码:</label>
+              <div class="input-group">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                <input type="password" formControlName="password" class="form-control" id="password1" placeholder="请输入密码">
+              </div>
+            <div [class.hidden]="myFormModel.get('password').valid || myFormModel.get('password').untouched" style="margin-left:90px">
+              <span class="help-block" [class.hidden]="!myFormModel.hasError('password','password')" style="margin: 0;font-size: 12px">
+                请输入6位以上的字母或数字
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn reg-btn">立即注册</button>
+            <p class="reg-agreement"><a href="#">微博服务使用协议</a></p>
+            <p class="reg-agreement"><a href="#">微博个人信息保护政策</a></p>
+            <p class="reg-agreement"><a href="#">全国人大常委会关于加强网络信息保护的决定</a></p>
+          </div>
+        </form> 
+      </div>
+      <div class="reg-help">
+        <div class="go-login">
+          <p>已有账号，<a href="#">直接登录》</a></p>
+        </div>
+        <div class="help">
+          <h4>微博注册帮助</h4>
+          <ul>
+            <li><a href="#">微博注册操作指南</a></li>
+            <li><a href="#">手机注册时提示手机号码已被绑定怎么办</a></li>
+            <li><a href="#">注册微博时显示昵称已被注册如何处理</a></li>
+            <li><a href="#">注册时提示"你所使用的IP地址异常"该怎么办</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
