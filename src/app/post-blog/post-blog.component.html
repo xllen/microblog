@@ -1,6 +1,6 @@
 <div class="post-blog">
     <p class="title">有什么新鲜事想告诉大家？</p>
-    <form class="post-form" [formGroup]="formModel">
+    <form class="post-form" [formGroup]="formModel" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <textarea class="form-control" placeholder="大家正在搜：张杰谢娜合体快本" formControlName="content"></textarea>
         </div>
@@ -10,11 +10,19 @@
         </div>
         <div class="form-group file">
             <span class="glyphicon glyphicon-picture"></span>
-            <input type="file" name="图片" id="addImgs">
+            <input type="file" name="图片" id="addImgs" (change)="chooseImg($event)">
             <span>上传图片</span>
         </div>
         <div class="form-group issue">
             <button type="submit" class="btn btn-block">发布</button>
         </div>
     </form>
+    <div class="preview" [style.display]="isShowImg ? 'block':'none'">
+        <h4>本地上传</h4>
+        <span class="glyphicon glyphicon-remove" (click)="closePreview()"></span>
+        <div class="col-md-4 preview-img" *ngFor="let img of imgsUrl let i = index">
+            <img [src]="img" alt="">
+            <i class="glyphicon glyphicon-remove" (click)="remove(i)"></i>
+        </div> 
+    </div>
 </div>

@@ -1,49 +1,66 @@
-<form class="form-horizontal">
+<form [formGroup]="formModel" class="form-horizontal" (ngSubmit)="updateUserInfo()" novalidate>
   <div class="form-group">
     <label for="name" class="col-sm-2 control-label">姓名</label>
     <div class="col-sm-10">
-      <input type="text" [(ngModel)]="userInfo.name" class="form-control" name="name" id="name">
+      <input type="text" formControlName="name" class="form-control" name="name" id="name">
     </div>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('minlength','name')">* 姓名不能少于2位</span>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('maxlength','name')">* 姓名不能大于10位</span>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('required','name')">* 姓名不能为空</span>
   </div>
   <div class="form-group">
-      <label for="nickName" class="col-sm-2 control-label">昵称</label>
-      <div class="col-sm-10">
-        <input type="text" [(ngModel)]="userInfo.nickName" class="form-control" name="nickName" id="nickName">
-      </div>
+    <label for="nickName" class="col-sm-2 control-label">昵称</label>
+    <div class="col-sm-10">
+      <input type="text" formControlName="nickName" class="form-control" name="nickName" id="nickName">
     </div>
-    <div class="form-group">
-        <label for="motto" class="col-sm-2 control-label">个性签名</label>
-        <div class="col-sm-10">
-          <input type="text" [(ngModel)]="userInfo.motto" class="form-control" name="motto" id="motto">
-        </div>
-      </div>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('maxlength','nickName')">* 昵称不能大于5位</span>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('required','nickName')">* 昵称不能为空</span>
+  </div>
+  <div class="form-group">
+    <label for="motto" class="col-sm-2 control-label">个性签名</label>
+    <div class="col-sm-10">
+      <input type="text" formControlName="motto" class="form-control" name="motto" id="motto">
+    </div>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('maxlength','motto')">* 昵称不能大于20位</span>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('required','motto')">* 昵称不能为空</span>
+  </div>
   <div class="form-group">
     <label for="age" class="col-sm-2 control-label">年龄</label>
     <div class="col-sm-10">
-      <input type="number" [(ngModel)]="userInfo.age" class="form-control" name="age" id="age">
+      <input type="number" formControlName="age" class="form-control" name="age" id="age">
     </div>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('required','age')">* 年龄不能为空</span>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('validAge','age')">* 请输入0~120岁之间正常的年纪</span>
   </div>
   <div class="form-group">
     <label for="phone" class="col-sm-2 control-label">手机号码</label>
     <div class="col-sm-10">
-      <input type="text" [(ngModel)]="userInfo.phone" class="form-control" name="phone" id="phone">
+      <input type="text" formControlName="phone" class="form-control" name="phone" id="phone">
     </div>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('required','phone')">* 手机号码不能为空</span>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('validPhone','phone')">* 请输入合法的手机号码</span>
   </div>
   <div class="form-group">
     <label for="address" class="col-sm-2 control-label">地址</label>
     <div class="col-sm-10">
-      <input type="text" [(ngModel)]="userInfo.address" class="form-control" name="address" id="address">
+      <input type="text" class="form-control" id="address" name="address" formControlName="address">
     </div>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('required','address')">* 地址不能为空</span>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('minlength','address')">* 地址长度不能小于3</span>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('maxlength','address')">* 地址长度不能大于20</span>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('validAddress','address')">* 请输入合法的地址，地址只能包括汉字、字母、数字和下划线</span>
   </div>
   <div class="form-group">
     <label for="email" class="col-sm-2 control-label">邮箱</label>
     <div class="col-sm-10">
-      <input type="email" [(ngModel)]="userInfo.email" class="form-control" name="email" id="email">
+      <input type="email" formControlName="email" class="form-control" name="email" id="email">
     </div>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('required','email')">* 邮箱不为空</span>
+    <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('validEmail','email')">* 请输入合法的邮箱，如xxx@aa.cc</span>
   </div>
   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default btn-block">修改</button>
+    <div class="col-sm-10 col-sm-offset-2">
+      <button type="submit" class="btn btn-success btn-block">修改</button>
     </div>
   </div>
 </form>

@@ -58,6 +58,8 @@
     position: absolute;
     left: 140px;
     top: 120px;
+    /* top: 90px; */
+    cursor: pointer;
 }
 .side-user .name {
     text-align: center;
