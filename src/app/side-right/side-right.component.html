@@ -2,19 +2,19 @@
   <div class="side-user">
     <div class="logined" [style.display]="isShowLogin ? 'block':'none'">
       <img src="http://img.t.sinajs.cn/t5/skin/public/profile_cover/073.jpg" class="bgImg" alt="">
-      <img src={{userInfo.headUrl}} class="head-portrait" alt="">
-      <p class="name">{{userInfo.nickName}}</p>
+      <img [routerLink]="['/user']" src="http://tva1.sinaimg.cn/crop.0.0.1270.1270.180/0067lse9jw8fcuz4web86j30za0zawhg.jpg" class="head-portrait" alt="">
+      <p class="name">{{userInfo?.nickName}}</p>
       <ul>
         <li>
-          <p>{{userInfo.attentionNum}}</p>
+          <p>{{userInfo?.attentionNum}}</p>
           <span>关注</span>
         </li>
         <li>
-          <p>{{userInfo.fans}}</p>
+          <p>{{userInfo?.fans}}</p>
           <span>粉丝</span>
         </li>
         <li>
-          <p>{{userInfo.blog}}</p>
+          <p>{{userInfo?.blog}}</p>
           <span>微博</span>
         </li>
       </ul>
@@ -46,7 +46,7 @@
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-block" style="background-color: #eb7350; color: #fff">登录</button>
-          <p class="go-register">还没有微博？<a href="#">立即注册</a></p>
+          <p class="go-register">还没有微博？<a [routerLink]="['/register']">立即注册</a></p>
         </div>
       </form> 
     </div>

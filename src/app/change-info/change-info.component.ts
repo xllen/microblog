@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User, BlogServiceService } from '../blog-service.service';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { UserInfoService } from '../user-info.service';
 
 @Component({
   selector: 'app-change-info',
@@ -13,20 +14,21 @@ export class ChangeInfoComponent implements OnInit {
 
   private formModel:FormGroup;
   
-  constructor(private blogService: BlogServiceService) { 
+  constructor(private userInfoService: UserInfoService) { 
   }
 
   ngOnInit() {
-    this.userInfo = this.blogService.getUserById("111");
+    // this.userInfo = this.userInfoService.getUserById("111");
     let fb = new FormBuilder();
+
     this.formModel = fb.group({
-      name: [this.userInfo.name,[Validators.required, Validators.minLength(2),Validators.maxLength(10)]],
-      nickName: [this.userInfo.nickName,[Validators.required,Validators.maxLength(5)]],
-      motto: [this.userInfo.motto, [Validators.required,Validators.maxLength(20)]],
-      age: [this.userInfo.age,[Validators.required,this.myValidAge]],
-      phone: [this.userInfo.phone, [Validators.required, this.myValidPhone]],
-      address: [this.userInfo.address,[Validators.minLength(3),Validators.maxLength(20),Validators.required,this.myValidAddress]],
-      email: [this.userInfo.email,[Validators.required, this.myValidEmail]]
+      name: ['',[Validators.required,Validators.minLength(2),Validators.maxLength(10)]],
+      gender: ['', [Validators.required, this.myValidGender]],
+      address: ['',[Validators.required, this.myValidAddress]],
+      birth: ['',[Validators.required,this.myValidBirth]],
+      qq: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(10)]],
+      prof: ['',Validators.required],
+      flag: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(15)]],
     });
   }
   updateUserInfo(){
@@ -48,6 +50,27 @@ export class ChangeInfoComponent implements OnInit {
     }
   }
 
+
+  myValidBirth(formControl:FormControl):any{
+    if(!formControl.value){
+      return null;
+    }
+    let val = formControl.value;
+    if(val.length !== 8){
+      return {validBirth: true};
+    }
+    let year = parseInt(val.slice(0,4));
+    let month = parseInt(val.slice(4,6));
+    let day = parseInt(val.slice(6,8));
+    if(isNaN(year)|| isNaN(month) || isNaN(day)){
+      return {validBirth: true};      
+    }else if(year > 2018 || year < 1900 || month > 12 || day > 31){
+      return {validBirth: true};
+    }else{
+      return null;
+    }
+  }
+
   myValidPhone(formControl:FormControl):any{
     if(!formControl.value){
       return null;
@@ -56,6 +79,18 @@ export class ChangeInfoComponent implements OnInit {
     let pattern = /^1[3|4|5|8][0-9]\d{8}$/;
     if(!pattern.test(val)){
       return {validPhone: true}
+    }else{
+      return null;
+    }
+  }
+
+  myValidGender(formControl:FormControl): any{
+    if(!formControl.value){
+      return null;
+    }
+    let val = formControl.value;
+    if(val !== "男" && val !== "女"){
+      return {validGender: true};
     }else{
       return null;
     }

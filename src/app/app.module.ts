@@ -23,6 +23,7 @@ import { SideRightComponent } from './side-right/side-right.component';
 import { MainComponent } from './main/main.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { FileUploadModule } from 'ng2-file-upload';
+import { UserInfoService } from './user-info.service';
 
 
 const routeConfig:Routes = [
@@ -67,7 +68,7 @@ const routeConfig:Routes = [
     RouterModule.forRoot(routeConfig),
     FileUploadModule
   ],
-  providers: [BlogServiceService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [BlogServiceService,UserInfoService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
