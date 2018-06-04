@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../blog-service.service';
+import { UserInfoService } from '../user-info.service';
 
 @Component({
   selector: 'app-user-top',
@@ -8,11 +9,11 @@ import { User } from '../blog-service.service';
 })
 export class UserTopComponent implements OnInit {
 
-  @Input()
-  private userInfo:User;
-  constructor() { }
+  private user:any;
+  constructor(private userInfoService: UserInfoService) { }
 
   ngOnInit() {
+    this.user = this.userInfoService.user;
   }
 
 }

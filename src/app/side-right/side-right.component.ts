@@ -74,6 +74,8 @@ export class SideRightComponent implements OnInit {
           console.log(JSON.parse(res._body));
           this.isShowLogin = true;
           this.isShowUnlogin = false;
+          this.userInfoService.isShowLogin = true;
+          this.userInfoService.isShowUnlogin = false;
         }
       }
     );

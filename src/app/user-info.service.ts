@@ -4,10 +4,6 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UserInfoService implements OnInit{
-
-  // 当前登录的用户ID
-  public userId: string;
-
   // 当前用户登录信息
   public user: any;
   // 当前用户个人信息
@@ -43,7 +39,24 @@ export class UserInfoService implements OnInit{
 
   // 获取对应的用户信息
   getUserInfo(){
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    let body = {
+      "user_id": this.user.user_id,
+    }
+    this.userInfoStream = this.http.post('/MicroBlog/get_userinfo.do', JSON.stringify(body),options);
+    return this.userInfoStream;
+  }
 
+  // 修改个人信息
+  changeUserInfo(userInfo: any){
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    let body = {
+      "user_id": this.user.user_id,
+    }
+    this.userInfoStream = this.http.post('/MicroBlog/change_userinfo.do', JSON.stringify(userInfo),options);
+    return this.userInfoStream;
   }
 
 }

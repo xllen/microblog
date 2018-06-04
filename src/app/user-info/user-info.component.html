@@ -1,24 +1,36 @@
 <ul class="user-info-items">
   <h4>个人信息</h4>
   <li class="user-info-item">
-    <span class="glyphicon glyphicon-user"></span>
-    <span>{{userInfo.name}}</span>
+    <span class="col-sm-3">姓名</span>
+    <span>{{userInfo?.userinfo_name}}</span>
   </li>
   <!-- <li class="user-info-item">
     <span class="glyphicon glyphicon-gift"></span>
     <span>{{userInfo.age}}</span>
   </li> -->
   <li class="user-info-item">
-    <span class="glyphicon glyphicon-phone"></span>
-    <span>{{userInfo.phone}}</span>
+    <span class="col-sm-3">性别</span>
+    <span>{{userInfo?.userinfo_gender}}</span>
   </li>
   <li class="user-info-item">
-    <span class="glyphicon glyphicon-tree-conifer"></span>
-    <span>{{userInfo.address}}</span>
+    <span class="col-sm-3">地址</span>
+    <span>{{userInfo?.userinfo_address}}</span>
   </li>
   <li class="user-info-item">
-    <span class="glyphicon glyphicon-comment"></span>
-    <span>{{userInfo.email}}</span>
+    <span class="col-sm-3">生日</span>
+    <span>{{userInfo?.userinfo_birth}}</span>
+  </li>
+  <li class="user-info-item">
+    <span class="col-sm-3">qq</span>
+    <span>{{userInfo?.userinfo_qq}}</span>
+  </li>
+  <li class="user-info-item">
+    <span class="col-sm-3">职业</span>
+    <span>{{userInfo?.userinfo_prof}}</span>
+  </li>
+  <li class="user-info-item">
+    <span class="col-sm-3">标签 </span>
+    <span>{{userInfo?.userinfo_flag}}</span>
   </li>
   <li class="user-change-link">
     <a [routerLink]="['./change']">

@@ -7,7 +7,7 @@
     </div>
     <div [hidden]="formModel.get('name').untouched">
       <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('minlength','name')">* 姓名不能少于2位</span>
-      <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('maxlength','name')">* 姓名不能大于10位</span>
+      <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('maxlength','name')">* 姓名不能大于15位</span>
       <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('required','name')">* 姓名不能为空</span>
     </div>
   </div>
@@ -40,7 +40,7 @@
       <input type="text" formControlName="birth" class="form-control" name="birth" id="birth">
     </div>
     <div [hidden]="formModel.get('birth').untouched">
-      <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('validBirth','birth')">* 正确格式为19900101</span>
+      <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('validBirth','birth')">* 正确格式为1990-01-01</span>
       <span class="col-sm-10 col-sm-offset-2 text-danger" [class.hidden]="!formModel.hasError('required','birth')">* 昵称不能为空</span>
     </div>
   </div>
