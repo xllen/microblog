@@ -71,6 +71,7 @@ export class SideRightComponent implements OnInit {
         if(res._body !== ""){
           // 把当前用户信息存入服务中的user信息中
           this.userInfoService.user = JSON.parse(res._body);
+          this.userInfo = JSON.parse(res._body);
           console.log(JSON.parse(res._body));
           this.isShowLogin = true;
           this.isShowUnlogin = false;
